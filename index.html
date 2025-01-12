@@ -5,57 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #111827; /* Dark background color */
+            color: #fff; /* White text color */
+        }
+        .btn-primary {
+            background-color: #1f2937;
+            color: #fff;
+            border-radius: 0.375rem;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #374151;
+            transform: translateY(-2px);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Shadow for the sections */
+        section {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 0.375rem;
+            padding: 2rem 0;
+        }
+        /* Add subtle animation for text */
+        h1, h2 {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            animation-delay: 0.3s;
+        }
+        h2 {
+            animation-delay: 0.5s;
+        }
+    </style>
 </head>
 <body class="font-sans antialiased">
+
     <!-- Hero Section -->
-    <header class="bg-gray-900 text-white py-20">
+    <header class="bg-[#111827] text-white py-20">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold">Bem-vindo ao Meu Portfólio</h1>
-            <p class="mt-4">Explore meus projetos e saiba mais sobre mim!</p>
-            <a href="#projects" class="mt-6 inline-block px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-700">Veja Meus Projetos</a>
+            <h1 class="text-5xl font-bold">Bem-vindo ao Meu Portfólio</h1>
+            <p class="mt-4 text-xl">Explore meus projetos e saiba mais sobre mim de forma intuitiva.</p>
+            <a href="#projects" class="btn-primary mt-6 inline-block">Veja Meus Projetos</a>
         </div>
     </header>
 
     <!-- About Me Section -->
-    <section id="about" class="py-16">
-        <div class="container mx-auto text-center">
+    <section id="about" class="bg-[#1f2937] text-center">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold">Sobre Mim</h2>
             <p class="mt-4">Sou um desenvolvedor apaixonado por criar experiências digitais incríveis. Aqui você encontrará informações sobre minha trajetória, habilidades e interesses.</p>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section id="categories" class="py-16 bg-gray-100">
-        <div class="container mx-auto text-center">
+    <section id="categories" class="bg-[#374151] text-center">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold">Categorias</h2>
             <ul class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <li class="bg-white shadow rounded p-6">Web Design</li>
-                <li class="bg-white shadow rounded p-6">Desenvolvimento Full-Stack</li>
-                <li class="bg-white shadow rounded p-6">UI/UX</li>
+                <li class="card bg-[#1f2937] shadow rounded p-6 hover:shadow-lg">Web Design</li>
+                <li class="card bg-[#1f2937] shadow rounded p-6 hover:shadow-lg">Desenvolvimento Full-Stack</li>
+                <li class="card bg-[#1f2937] shadow rounded p-6 hover:shadow-lg">UI/UX</li>
             </ul>
         </div>
     </section>
 
     <!-- Featured Projects Section -->
-    <section id="projects" class="py-16">
-        <div class="container mx-auto text-center">
+    <section id="projects" class="bg-[#374151] text-center">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold">Projetos em Destaque</h2>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white shadow rounded">
+                <div class="card bg-[#1f2937] shadow rounded">
                     <img src="https://via.placeholder.com/300x200" alt="Projeto 1" class="w-full">
                     <div class="p-4">
                         <h3 class="font-bold text-xl">Projeto 1</h3>
                         <p class="mt-2">Descrição breve do projeto.</p>
                     </div>
                 </div>
-                <div class="bg-white shadow rounded">
+                <div class="card bg-[#1f2937] shadow rounded">
                     <img src="https://via.placeholder.com/300x200" alt="Projeto 2" class="w-full">
                     <div class="p-4">
                         <h3 class="font-bold text-xl">Projeto 2</h3>
                         <p class="mt-2">Descrição breve do projeto.</p>
                     </div>
                 </div>
-                <div class="bg-white shadow rounded">
+                <div class="card bg-[#1f2937] shadow rounded">
                     <img src="https://via.placeholder.com/300x200" alt="Projeto 3" class="w-full">
                     <div class="p-4">
                         <h3 class="font-bold text-xl">Projeto 3</h3>
@@ -67,23 +117,23 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto text-center">
+    <section id="contact" class="bg-[#374151] text-center">
+        <div class="container mx-auto">
             <h2 class="text-3xl font-bold">Entre em Contato</h2>
             <form class="mt-6 max-w-lg mx-auto">
                 <div class="mb-4">
-                    <label for="name" class="block text-left text-gray-700">Nome</label>
-                    <input type="text" id="name" class="w-full px-4 py-2 border rounded">
+                    <label for="name" class="block text-left text-gray-300">Nome</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-600 rounded text-black">
                 </div>
                 <div class="mb-4">
-                    <label for="email" class="block text-left text-gray-700">Email</label>
-                    <input type="email" id="email" class="w-full px-4 py-2 border rounded">
+                    <label for="email" class="block text-left text-gray-300">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-600 rounded text-black">
                 </div>
                 <div class="mb-4">
-                    <label for="message" class="block text-left text-gray-700">Mensagem</label>
-                    <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded"></textarea>
+                    <label for="message" class="block text-left text-gray-300">Mensagem</label>
+                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-600 rounded text-black"></textarea>
                 </div>
-                <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Enviar</button>
+                <button type="submit" class="btn-primary">Enviar</button>
             </form>
         </div>
     </section>
